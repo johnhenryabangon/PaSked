@@ -1,0 +1,814 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Dark theme colors */
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --border-color: #30363d;
+
+    /* Accent colors */
+    --accent-red: #f85149;
+    --accent-blue: #58a6ff;
+    --accent-yellow: #f9c23c;
+    --accent-green: #3fb950;
+
+    /* UI states */
+    --hover-bg: #282e33;
+    --focus-ring: #58a6ff;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Commissioner', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(89, 89, 171, 0.1);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(17px);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+	color: #ffff;
+    text-decoration: none;
+}
+
+.logo:hover{
+    opacity: 0.7;
+}
+
+.logo-icon {
+    width: 32px;
+    height: auto;
+    color: none;
+    border-radius: 4px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding-left: 12px;
+}
+
+.nav-menu a:hover {
+    color: var(--text-primary);
+}
+
+/* Main container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem;
+    padding-top: 20px;
+}
+
+/* Page title */
+.page-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #F0F8FF;
+}
+
+.page-title p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Court cards grid */
+.courts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.court-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.court-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2);    
+}
+
+.court-image {
+    width: 100%;
+    height: 200px;
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 3rem;
+}
+
+.court-info {
+    padding: 1.5rem;
+}
+
+.court-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.court-location {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.court-actions {
+    display: flex;
+    flex-wrap: wrap;          /* Allow wrapping on smaller widths */
+    gap: 0.5rem;              /* Space between buttons */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.court-actions .btn {
+    flex: 1 1 auto;           /* Flexible width, but can shrink */
+    min-width: 100px;         /* Minimum button width */
+    white-space: nowrap;      /* Prevent button text from breaking */
+    text-align: center;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #fcd116;
+    color: black;
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background: #D66B6B;
+}
+
+.btn-secondary {
+    background-color: #0038a8;
+    color: white;
+    border: none;
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.3);
+}
+.btn-secondary:hover {
+    background-color: #e1c277;
+}
+
+.btn-info {
+    background-color: #ce1126;
+    color: white;
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.btn-info:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: var(--accent-green);
+    color: white;
+}
+
+.btn-success:hover {
+    background: #2ea043;
+}
+
+.btn-danger {
+    background: var(--accent-red);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #da3633;
+    transform: translateY(-2px);
+}
+
+.btn-control{
+    background: none;
+    color: #f2f0efd0;
+    border: none;
+    padding: 0px 5px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.btn-control:hover{
+    color: #fff;
+}
+
+
+.btn-warning {
+    background: var(--accent-yellow);
+    color: #0d1117;
+}
+
+.btn-warning:hover {
+    background: #e5af2c;
+}
+
+.nav-button, .nav-button.secondary {
+    background: var(--bg-tertiary);
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+
+.nav-button:hover, .nav-button.secondary:hover {
+    background: var(--accent-blue);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.nav-button.secondary {
+    background: var(--bg-tertiary);
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+.week-picker {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.week-picker input[type="week"] {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+.week-picker input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+} 
+.current-week-info {
+    text-align: center;
+    color: var(--accent-yellow);
+    font-weight: 600;
+}
+
+
+/* Form styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group button{
+    margin-top: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    background: (255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--bg-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--focus-ring);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.75rem;
+    background: (255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--bg-primary);
+    font-size: 1rem;
+}
+
+/* Admin dashboard */
+.admin-header {
+    background: var(--bg-secondary);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+    color: #F0F8FF;
+    margin-bottom: 0.5rem;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: rgba(89, 89, 171, 0.1);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(17px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    filter: brightness(0.5) invert(1);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
+.pending { color: var(--accent-yellow); }
+.confirmed { color: var(--accent-green); }
+.declined { color: var(--accent-red); }
+
+/* Table styles */
+.table-container {
+    background: rgba(89, 89, 171, 0.1);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(17px);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+td {
+    color: var(--text-secondary);
+}
+
+tbody tr:hover {
+    background: var(--hover-bg);
+}
+
+/* Status badges */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-pending {
+    background: rgba(249, 194, 60, 0.2);
+    color: var(--accent-yellow);
+}
+
+.status-confirmed {
+    background: rgba(63, 185, 80, 0.2);
+    color: var(--accent-green);
+}
+
+.status-declined {
+    background: rgba(248, 81, 73, 0.2);
+    color: var(--accent-red);
+}
+
+/* Alert messages */
+.alert {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background: rgba(63, 185, 80, 0.1);
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+.alert-error {
+    background: rgba(248, 81, 73, 0.1);
+    border: 1px solid var(--accent-red);
+    color: var(--accent-red);
+}
+
+/* Login form */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 5%;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(89, 89, 171, 0.1);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(17px);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .courts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title h1 {
+        font-size: 2rem;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .table-container {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    /* 1. Stack the Title/Info and Welcome/Controls vertically */
+    .header-content-wrapper {
+        flex-direction: column;
+        align-items: flex-start; /* Align all content to the left */
+        gap: 0.5rem; /* Add space between the stacked sections */
+    }
+
+    /* 2. Reduce the size of the main title */
+    .header-title {
+        font-size: 1.2rem;
+    }
+
+    /* 3. Handle the Welcome text and buttons */
+    .header-controls {
+        /* Make the controls section take up the full width */
+        width: 100%; 
+        
+        /* Flexbox to keep the welcome text and icons on the same line */
+        display: flex;
+        justify-content: space-between; /* Push welcome text to the left, icons to the right */
+        align-items: center;
+    }
+
+    .login-container {
+    margin-top: 20%;
+    }
+
+    .welcome-text {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .btn-control{
+        font-size: 12px;
+    }
+
+
+    .welcome-text {
+        display: none;
+    }
+
+    .login-container {
+        margin-top: 20%;
+    }
+
+    .socials{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0%;
+        margin: 0%;
+
+    }
+
+    .socials p a{
+        text-decoration: none;
+        color: #f0f6fc;
+        font-size: 9.5px;
+        text-align: left;
+    }
+
+    .modal-content{
+        width: 320px;
+    }
+
+    .modal-content h2{
+        font-size: 18px;
+    }
+}
+
+/* Modal Overlay */
+.modal{
+    display:none; 
+    position: fixed; 
+    top:0; 
+    left:0; 
+    width:100vw; 
+    height:120vh; 
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+}
+
+.modal-content{
+    background: rgba(89, 89, 171, 0.1); 
+    -webkit-backdrop-filter: blur(0px); 
+    backdrop-filter: blur(17px); 
+    max-width: 600px; 
+    margin: 5% auto; 
+    padding: 20px; 
+    border-radius: 8px; 
+    position: relative; 
+}
+
+
+/* --- Base Header Styling (Desktop/General) --- */
+.admin-header {
+    /* Using a standard class for the background/blur styles */
+    background: rgba(89, 89, 171, 0.1);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(17px);
+    padding: 1rem; /* Add some padding around the content */
+}
+
+.header-content-wrapper {
+    /* Desktop layout: Side-by-side */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Optional: Limit the width if you have a wide display */
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* Hide the hamburger icon by default on desktop */
+.menu-toggle {
+    display: none; 
+}
+
+/* Ensure controls are in a line on desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header-title {
+    /* Keep the title visible */
+    color: #F0F8FF; 
+    font-size: 1.5rem; /* Default size for larger screens */
+    margin: 0;
+}
+
+.header-location, .welcome-text {
+    /* Use the variable for secondary text color */
+    color: var(--text-secondary); 
+}
+
+/* Ensure the welcome text is visible on the same line as buttons */
+.welcome-text {
+    margin-right: 1rem;
+}
+
+/* Base style for the settings button (moved from inline) */
+.settings-btn {
+    background: none; 
+}
+
+/*Join Us*/
+
+.card-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 6rem;
+    margin-bottom: 1rem;
+}
+
+.card{
+    background: rgba(89, 89, 171, 0.1);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(17px);
+    width: 100%;
+    margin: 3rem 0;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0;
+    text-align: justify;
+}
+
+.card h2{
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--accent-yellow);
+}
+
+.socials{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 1.2rem 5rem;
+}
+
+.socials a{
+    text-decoration: none;
+    color: #f0f6fc;
+}
+
+.socials a:hover{
+    opacity: 0.5;
+}
+
+.socials div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.soc-icons {
+  width: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.powered-by{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 40px;
+}
+
+.powered-by-logo{
+    width: 60px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+}
+
+.powered-by-logo:hover{
+    opacity: 0.5;
+}

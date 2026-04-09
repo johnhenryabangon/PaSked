@@ -1,0 +1,30 @@
+# PaSked - Quick Start Guide
+
+## What You Just Downloaded
+This is the complete PaSked Sports Court Booking System - ready to run!
+
+## Quick Setup (5 minutes)
+1. Extract this ZIP file
+2. Move the "PaSked" folder to C:\xampp\htdocs\
+3. Start XAMPP (Apache + MySQL on port 3307)
+4. Create database "pasked" in phpMyAdmin
+5. Import the database_setup.sql file
+6. Visit http://localhost/PaSked/
+
+## Admin Login
+- Username: admin_power (or any admin_* username)
+- Password: admin123
+
+## Features
+✅ Dark theme design with red, blue, yellow accents
+✅ Responsive mobile-friendly layout  
+✅ No user registration required
+✅ Admin dashboard for each court
+✅ Real-time form validation
+✅ Secure PHP/MySQL backend
+✅ Metro Manila courts included
+
+## Need Help?
+Read the full README.md file for detailed instructions.
+
+Built with ❤️ for Filipino sports enthusiasts!
